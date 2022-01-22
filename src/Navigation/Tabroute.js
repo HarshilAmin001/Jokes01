@@ -7,20 +7,19 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {Tab1,Tab2} from '../Screens';
 import navigationString from '../Constants/navigationString';
-import MainStack from './MainStack';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-function Routes() {
+
+function Tabroute() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-       screenOptions={{headerShown: false}}
+      <Tab.Navigator initialRouteName={navigationString.TAB1}
+      
       >
-        {MainStack(Stack)}
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Tab.Screen name={navigationString.TAB1} component={Tab1} />
+        <Tab.Screen name={navigationString.TAB2} component={Tab2} />
+      </Tab.Navigator>
   );
 }
 
-export default Routes;
+export default Tabroute;
