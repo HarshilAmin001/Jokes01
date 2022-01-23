@@ -3,11 +3,9 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {Jokes, Tab1,Tab2} from '../Screens';
+import {Jokes} from '../Screens';
 import navigationString from '../Constants/navigationString';
-import MainStack from './MainStack';
 import Tabroute from './Tabroute';
 
 const Stack = createNativeStackNavigator();
