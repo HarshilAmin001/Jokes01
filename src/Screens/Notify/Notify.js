@@ -1,16 +1,17 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-import styles from './styles';
+import Notification from '../../Component/Notification/Notification';
+import styles from '../Jokes/styles';
 // create a component
-const Jokes = () => {
+const Notify = () => {
     return (
         <View style={styles.container}>
-            <text>Jokes</text>
+            <Notification />
         </View>
     );
 };
 
+// define your styles
 //make this component available to the app
-export default Jokes;
+export default Notify;
