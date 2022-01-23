@@ -1,8 +1,10 @@
+import 'react-native-gesture-handler';
 //import liraries
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Routes from './src/Navigation/Route';
+
 
 
 // create a component

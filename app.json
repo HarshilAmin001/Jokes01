@@ -8,7 +8,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "plugins": [
+        [
+          "expo-notifications",
+          {
+            "icon": "./assets/notification.png",
+            "color": "#ffffff"
+          }
+        ]
+      ]
     },
     "updates": {
       "fallbackToCacheTimeout": 0
