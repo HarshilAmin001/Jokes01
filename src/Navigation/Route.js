@@ -4,13 +4,13 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {Jokes} from '../Screens';
 import navigationString from '../Constants/navigationString';
 import Tabroute from './Tabroute';
-import {Image} from 'react-native';
-import imagePath from '../Constants/imagePath';
 import Notify from '../Screens/Notify/Notify';
+import CustomDrawer from '../Component/Customdrawer/CustomDrawer';
 
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,28 +24,36 @@ function Routes() {
       >
         {MainStack(Stack)}
       </Stack.Navigator> */}
-    <Drawer.Navigator
-     screenOptions={{headerShown: false}}
-     >
-      <Drawer.Screen name={navigationString.HOME} component={Tabroute}
-      
-      options={{
-        drawerIcon: ({focused})=>{
-          return(
-            <Image source={imagePath.HomeIcom} />
-          )
-        }
-      }}
+     <Drawer.Navigator
+      drawerContent={props => <CustomDrawer {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerActiveBackgroundColor: '#aa18ea',
+        drawerActiveTintColor: '#fff',
+        drawerInactiveTintColor: '#333',
+        drawerLabelStyle: {
+          marginLeft: -25,
+          fontFamily: 'sans-serif',
+          fontSize: 15,
+        },
+      }}>
+       <Drawer.Screen
+        name={navigationString.HOME}
+        component={Tabroute}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons name="home-outline" size={22} color={color} />
+          ),
+        }}
       />
-      <Drawer.Screen name={navigationString.JOKES} component={Notify}
-      options={{
-        drawerIcon: ({focused})=>{
-          return(
-            <Image source={imagePath.JokeIcon} />
-          )
-        }
-        
-      }}
+      <Drawer.Screen
+        name={navigationString.JOKES}
+        component={Notify}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons name="person-outline" size={22} color={color} />
+          ),
+        }}
       />
     </Drawer.Navigator>
 
