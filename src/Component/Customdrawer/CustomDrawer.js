@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, ImageBackground,
     Image,
     TouchableOpacity, } from 'react-native';
 import styles from '../Customdrawer/styles';
-
+import {onClick} from '../Notification/Notification';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -25,7 +25,7 @@ const CustomDrawer = (props) => {
           style={{padding: 20}}>
 
 <Image
-            source={require('../../../assets/images/user-profile.jpg')}
+            source={require('../../../assets/icon.png')}
             style={{height: 80, width: 80, borderRadius: 40, marginBottom: 10}}
           />
         

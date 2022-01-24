@@ -46,9 +46,9 @@ function Routes() {
           ),
         }}
       />
-      <Drawer.Screen
+      <Drawer.Screen 
         name={navigationString.JOKES}
-        component={Notify}
+        component={Notify} 
         options={{
           drawerIcon: ({color}) => (
             <Ionicons name="person-outline" size={22} color={color} />

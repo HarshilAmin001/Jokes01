@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "myapp",
     "name": "Jokes01",
     "slug": "Jokes01",
     "version": "1.0.0",
@@ -9,7 +10,6 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff",
-      "scheme": "Myjokes",
       "plugins": [
         [
           "expo-notifications",
@@ -33,7 +33,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.harshil_amin.Jokes01"
     },
     "web": {
       "favicon": "./assets/favicon.png"

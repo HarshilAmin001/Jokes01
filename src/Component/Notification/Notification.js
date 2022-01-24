@@ -8,6 +8,7 @@ import Constants from 'expo-constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import storage from "@react-native-async-storage/async-storage";
 import styles from './styles';
+import Deeplink from '../Notification/Deeplink'
 
 
 //1. import the library
@@ -85,7 +86,7 @@ export default function Notification() {
       lastNotificationResponse.notification.request.content.data.url &&
       lastNotificationResponse.actionIdentifier === Notifications.DEFAULT_ACTION_IDENTIFIER
     ) {
-      Linking.openURL(lastNotificationResponse.notification.request.content.subtitle);
+      Linking.openURL(lastNotificationResponse.notification.request.content.data.url);
     }
   }, [lastNotificationResponse]);
 
@@ -110,7 +111,7 @@ export default function Notification() {
       content: {
         title: "Joke Of the Day: ",
         body: data.setup,
-        data: {data: data.delivery},
+        data: {url:'myapp://Jokes', data: data.delivery},
       },
       trigger: null
     });
