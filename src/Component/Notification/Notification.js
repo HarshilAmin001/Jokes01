@@ -9,6 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import storage from "@react-native-async-storage/async-storage";
 import styles from './styles';
 
+
 //1. import the library
 //2. get permission
 //3. do push notifications on button click
@@ -84,7 +85,7 @@ export default function Notification() {
       lastNotificationResponse.notification.request.content.data.url &&
       lastNotificationResponse.actionIdentifier === Notifications.DEFAULT_ACTION_IDENTIFIER
     ) {
-      Linking.openURL(lastNotificationResponse.notification.request.content.data.url);
+      Linking.openURL(lastNotificationResponse.notification.request.content.subtitle);
     }
   }, [lastNotificationResponse]);
 
@@ -109,7 +110,7 @@ export default function Notification() {
       content: {
         title: "Joke Of the Day: ",
         body: data.setup,
-        data: {data: data.delivery}
+        data: {data: data.delivery},
       },
       trigger: null
     });
@@ -117,25 +118,19 @@ export default function Notification() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={{ flex: 1, padding: 24 }}>
-        {isLoading ? <Text>Loading...</Text> :
-          (<View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-            <Text style={{ fontSize: 18, color: 'green', textAlign: 'center' }}>{data.setup}</Text>
-            <Text style={{ fontSize: 14, color: 'green', textAlign: 'center', paddingBottom: 10 }}>Articles:{data.delivery}</Text>
-            <FlatList
-              data={data.Jokes}
-              keyExtractor={({ id }, index) => id}
-              renderItem={({ item }) => (
-                <Text>{item.id + '. ' + item.setup}</Text>
-              )}
-            />
-          </View>
-          )}
-      </View> */}
+
+      
   <View style={styles.container}>
-  <Text>Data: {notification && JSON.stringify(notification.request.content.data.data)}</Text>
+  <Text style={{
+    marginBottom: 50,
+    marginHorizontal: 50,
+    fontSize: 20,
+    color:'red',
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold'
+  }} >PUNCHLINE: {notification && JSON.stringify(notification.request.content.data.data)}</Text>
         <TouchableOpacity onPress={onClick}>
-          <Text style={{ backgroundColor: 'red', padding: 10, color: 'white' }}>Show me a joke</Text>
+          <Text style={{ backgroundColor: '#aa18ea', padding: 10, color: 'white',fontWeight:'bold', borderRadius: 10, width:150, textAlign:'center' }}>Show me a joke</Text>
         </TouchableOpacity>
         <StatusBar style="auto" />
       </View>

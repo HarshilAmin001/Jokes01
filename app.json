@@ -9,6 +9,7 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff",
+      "scheme": "Myjokes",
       "plugins": [
         [
           "expo-notifications",
